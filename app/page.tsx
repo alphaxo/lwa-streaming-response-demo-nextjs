@@ -9,7 +9,10 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div className="space-y-8 lg:space-y-14">
       {/* @ts-expect-error Async Server Component */}
-      <SingleProduct data={fetch(`${getBaseUrl()}/api/products?id=1&delay=3000`)} />
+      <SingleProduct data={fetch(
+        `${getBaseUrl()}/api/products?id=1`,
+        { cache: 'no-store' }
+      )} />
 
       <div className="relative">
         <div className="absolute top-2 -left-4">
@@ -22,7 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         <RecommendedProducts
           path=""
           data={fetch(
-            `${getBaseUrl()}/api/products?delay=3000&filter=1`,
+            `${getBaseUrl()}/api/products?delay=5000&filter=1`,
             {
               cache: 'no-store'
             }
@@ -40,7 +43,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         {/* @ts-expect-error Async Server Component */}
         <Reviews
           data={fetch(
-            `${getBaseUrl()}/api/reviews?delay=3000`,
+            `${getBaseUrl()}/api/reviews?delay=10000`,
             { cache: 'no-store' }
           )}
         />
