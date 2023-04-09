@@ -1,10 +1,10 @@
-FROM public.ecr.aws/docker/library/node:16.16.0-slim as builder
+FROM public.ecr.aws/docker/library/node:19.8.1-slim as builder
 WORKDIR /app
 
 COPY . .
 RUN npm update && npm run build
 
-FROM public.ecr.aws/docker/library/node:16.16.0-slim as runner
+FROM public.ecr.aws/docker/library/node:19.8.1-slim as runner
 COPY --from=awsguru/aws-lambda-adapter:x86_64_0.7.0_alpha_2 /lambda-adapter /opt/extensions/lambda-adapter
 ENV PORT=3000 NODE_ENV=production
 ENV AWS_LWA_ENABLE_COMPRESSION=false
