@@ -18,7 +18,7 @@ export const ProductCard = ({
 }) => {
     const price = dinero(product.price as DineroSnapshot<number>);
     return (
-        <Link href={href} className="group block">
+        <Link href="" className="group block">
             <div className="space-y-2">
                 <div className="relative">
                     {product.isBestSeller ? (
