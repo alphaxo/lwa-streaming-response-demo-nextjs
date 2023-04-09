@@ -6,13 +6,13 @@ Description: >
   Sample SAM template for lwa-streaming-response-demo-next
 Globals:
   Function:
-    Timeout: 10
+    Timeout: 60
 
 Resources:
   NextjsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      MemorySize: 128
+      MemorySize: 256
       PackageType: Image
       Architectures:
         - x86_64
@@ -23,8 +23,3 @@ Resources:
       DockerTag: v1
       DockerContext: ./
       Dockerfile: Dockerfile
-
-Output:
-  NextjsFunctionApiURL:
-    Description: "API Gateway endpoint URL for Next.js"
-    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}/"
