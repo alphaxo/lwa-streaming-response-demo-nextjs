@@ -36,7 +36,6 @@ export default function RootLayout({
                           ship date, other recommended products, and customer reviews are
                           progressively streamed in.
                         </li>
-                        <li>Try refreshing or navigating to other recommended products.</li>
                       </ul>
                     </div>
                     <div className='relative rounded-lg border border-dashed p-3 lg:p-5 border-gray-700'>
