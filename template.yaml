@@ -17,7 +17,7 @@ Resources:
       Architectures:
         - x86_64
       FunctionUrlConfig:
-        AuthType: NONE
+        AuthType: AWS_IAM
         InvokeMode: RESPONSE_STREAM
     Metadata:
       DockerTag: v1
